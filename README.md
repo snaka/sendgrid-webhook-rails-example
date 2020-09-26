@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Usage
 
-Things you may want to cover:
+Clone this repo
+```
+git clone https://github.com/snaka/sendgrid-webhook-rails-example.git
+```
 
-* Ruby version
+Cconfigure Sendgrid Signature Verification Key
+```
+export SENDGRID_WEBHOOK_PUBLIC_KEY=xxxxxxxxxxxxxxxxx
+```
 
-* System dependencies
+Run local server
+```
+bin/rails s
+```
 
-* Configuration
+Server has two webhook endpoints.
 
-* Database creation
+* `/sendgrid/webhook` (WITHOUT request verification)
+* `/sendgrid/signed/webhook` (WITH request verification)
 
-* Database initialization
+Expose local webhook endpois by ngrok
 
-* How to run the test suite
+```
+ngrok http 3000
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then test Event Webhook Request to your local endpoint from SendGrid dashbord.
