@@ -28,4 +28,10 @@ Expose local webhook endpois by ngrok
 ngrok http 3000
 ```
 
-Then test Event Webhook Request to your local endpoint from SendGrid dashbord.
+ngrok displays temporary hostname forwarded to your local server as follows.
+
+```
+Forwarding                    https://xxxxxxxxxx.ngrok.io -> http://localhost:3000
+```
+
+Then test Event Webhook Request to your webhook endpoint from SendGrid dashbord.
